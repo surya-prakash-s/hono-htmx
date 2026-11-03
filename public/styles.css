@@ -1,0 +1,282 @@
+/* Semantic CSS - Meaningful class names based on content purpose */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
+  --text-color: #333;
+  --text-light: #777;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+  --spacing-unit: 1rem;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: var(--spacing-unit);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Layout */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-unit);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--box-shadow);
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.header nav {
+  margin-top: calc(var(--spacing-unit) * 0.5);
+}
+
+.header nav a {
+  color: white;
+  margin-right: var(--spacing-unit);
+  padding: calc(var(--spacing-unit) * 0.25) calc(var(--spacing-unit) * 0.5);
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+main {
+  padding: var(--spacing-unit);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: calc(100vh - 120px);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-unit);
+  text-align: center;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: white;
+  padding: calc(var(--spacing-unit) * 2);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-unit);
+  text-align: center;
+}
+
+.hero h2 {
+  color: white;
+  margin-bottom: var(--spacing-unit);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+/* Buttons */
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: calc(var(--spacing-unit) * 0.5) var(--spacing-unit);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: var(--spacing-unit);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: calc(var(--spacing-unit) * 0.25);
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: calc(var(--spacing-unit) * 0.5);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Notifications */
+.notification {
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-unit) 0;
+}
+
+.notification.success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-left: 4px solid var(--success-color);
+  color: var(--success-color);
+}
+
+.notification.warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  border-left: 4px solid var(--warning-color);
+  color: var(--warning-color);
+}
+
+.notification.error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--error-color);
+  color: var(--error-color);
+}
+
+/* Page sections */
+.page {
+  padding: var(--spacing-unit);
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.page h2 {
+  margin-bottom: var(--spacing-unit);
+  padding-bottom: calc(var(--spacing-unit) * 0.5);
+  border-bottom: 1px solid var(--light-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    padding: calc(var(--spacing-unit) * 0.5);
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 0.5);
+  }
+  
+  .hero {
+    padding: var(--spacing-unit);
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  main {
+    padding: calc(var(--spacing-unit) * 0.5);
+  }
+}
+
+/* HTMX-specific styles */
+[hx-swap-oob] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[hx-swap-oob="true"] {
+  opacity: 1;
+}
+
+/* Loading indicators */
+.htmx-indicator {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.htmx-request .htmx-indicator {
+  opacity: 1;
+}
+
+/* Smooth transitions for HTMX swaps */
+.htmx-swapping {
+  opacity: 0.5;
+}
+
+/* Animation for new content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.htmx-added {
+  animation: fadeIn 0.3s ease;
+}

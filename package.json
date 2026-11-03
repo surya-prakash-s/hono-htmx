@@ -1,0 +1,20 @@
+{
+  "name": "hono-htmx",
+  "version": "1.0.0",
+  "description": "Hono + HTMX + Semantic CSS Application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "hono": "^4.4.0",
+    "htmx.org": "^1.9.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["hono", "htmx", "semantic-css"],
+  "author": "",
+  "license": "MIT"
+}
