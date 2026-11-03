@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generate semantic HTML with Deterministic RAG LLM Pipeline" />
+    <title>Semantic HTML Generator</title>
+    
+    <!-- Preload HTMX -->
+    <link rel="preload" href="/public/htmx.min.js" as="script" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/styles/tokens.css" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    
+    <!-- HTMX -->
+    <script src="/public/htmx.min.js"></script>
+    <script>
+      htmx.config.globalViewTransitions = true;
+      htmx.onLoad(function(content) {
+        htmx.process(content);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

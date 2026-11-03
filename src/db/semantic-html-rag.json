@@ -1,0 +1,226 @@
+[
+  {
+    "id": "html5-doctype",
+    "title": "HTML5 Doctype Declaration",
+    "category": "Document Structure",
+    "content": "The HTML5 doctype declaration is <!DOCTYPE html>. It must appear at the very beginning of the HTML document, before the <html> tag. This tells browsers which version of HTML the page is written in. The doctype is case-insensitive but convention is to use uppercase. HTML5 is the current standard and the doctype is simplified from previous versions.",
+    "tags": ["doctype", "html5", "document", "structure"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "html-element",
+    "title": "HTML Root Element",
+    "category": "Document Structure",
+    "content": "The <html> element is the root element of an HTML document. It represents the entire document and must contain exactly one <head> and one <body> element. The html element should include a lang attribute specifying the language of the document (e.g., lang=\"en\"). This is important for accessibility and search engine optimization.",
+    "tags": ["html", "root", "element", "lang", "language"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "head-element",
+    "title": "Document Head",
+    "category": "Document Structure",
+    "content": "The <head> element contains machine-readable information about the document, such as metadata, scripts, and styles. It must appear before the <body> element. Common children include: <meta charset=\"UTF-8\"> for character encoding, <meta name=\"viewport\"> for responsive design, <title> for the page title, <link> for stylesheets, <script> for JavaScript, and <style> for internal CSS.",
+    "tags": ["head", "meta", "title", "metadata", "charset", "viewport"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "body-element",
+    "title": "Document Body",
+    "category": "Document Structure",
+    "content": "The <body> element contains the content of the HTML document that is visible to users. It represents the main content area of the document. The body element should contain semantic elements like <header>, <main>, <footer>, <section>, <article>, <nav>, and <aside> to properly structure the content.",
+    "tags": ["body", "content", "structure", "semantic"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "header-element",
+    "title": "Header Semantic Element",
+    "category": "Semantic Structure",
+    "content": "The <header> element represents introductory content, typically a group of introductory or navigational aids. It can contain heading elements (h1-h6), logos, search forms, or author information. A document can have multiple header elements. The header element is not sectioning content, so it doesn't create a new section in the document outline.",
+    "tags": ["header", "semantic", "intro", "navigation"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "nav-element",
+    "title": "Navigation Semantic Element",
+    "category": "Navigation",
+    "content": "The <nav> element represents a section of a page that links to other pages or to parts within the page. Not all links need to be in a nav element; only primary navigation blocks should use it. It is good practice to include an aria-label attribute to describe the purpose of the navigation. Screen readers can use this to skip navigation sections.",
+    "tags": ["nav", "navigation", "links", "aria", "accessibility"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "main-element",
+    "title": "Main Content Element",
+    "category": "Semantic Structure",
+    "content": "The <main> element represents the dominant content of the document. It should be unique to the document and not repeated across pages. There should be only one main element per page. It is good for accessibility as screen readers can jump directly to the main content. The main element is not a sectioning element.",
+    "tags": ["main", "content", "semantic", "accessibility"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "footer-element",
+    "title": "Footer Semantic Element",
+    "category": "Semantic Structure",
+    "content": "The <footer> element represents the footer for its nearest ancestor sectioning element (article, aside, nav, section) or sectioning root element (body, blockquote, details, dialog, fieldset, figure, td). A footer typically contains information about the author of the section, copyright data, or links to related documents. A document can have multiple footer elements.",
+    "tags": ["footer", "semantic", "copyright", "links"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "section-element",
+    "title": "Section Semantic Element",
+    "category": "Semantic Structure",
+    "content": "The <section> element represents a generic standalone section of a document. It is a sectioning element, meaning it creates a new section in the document outline. Each section should have a heading (h1-h6) to describe its content. Use section when the content is thematically grouped and typically has a heading. Do not use section as a generic container; use div for that.",
+    "tags": ["section", "semantic", "grouping", "heading"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "article-element",
+    "title": "Article Semantic Element",
+    "category": "Semantic Structure",
+    "content": "The <article> element represents a self-contained composition in a document that is intended to be independently distributable or reusable. Examples include a forum post, a magazine or newspaper article, a blog entry, a product card, or a user-submitted comment. It is a sectioning element. An article should make sense on its own and be independently distributable.",
+    "tags": ["article", "semantic", "content", "self-contained", "reusable"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "aside-element",
+    "title": "Aside Semantic Element",
+    "category": "Semantic Structure",
+    "content": "The <aside> element represents a portion of a document whose content is only indirectly related to the document's main content. Asides are often represented as sidebars or call-out boxes. It is a sectioning element. Common uses include pull quotes, sidebars, advertisements, or groups of nav elements. The aside content should be tangentially related to the content around it.",
+    "tags": ["aside", "semantic", "sidebar", "indirect", "related"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "heading-hierarchy",
+    "title": "Heading Hierarchy",
+    "category": "Accessibility",
+    "content": "HTML provides six levels of headings: h1 through h6. h1 is the highest level and h6 is the lowest. Headings should be used in order and should not skip levels (e.g., don't go from h1 directly to h3). The h1 element should be used for the main title of the page and there should be only one h1 per page. Screen readers use headings to navigate, so proper hierarchy is crucial for accessibility. Each section should have its own heading hierarchy.",
+    "tags": ["headings", "h1", "h2", "h3", "h4", "h5", "h6", "hierarchy", "accessibility"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "form-element",
+    "title": "Form Element",
+    "category": "Forms",
+    "content": "The <form> element represents a document section containing interactive controls for submitting information. It should include an action attribute (URL to send the form data to) and a method attribute (GET or POST). Forms can contain input, textarea, button, select, fieldset, and other form-related elements. Always include proper labels for form controls using the <label> element with a for attribute matching the input's id.",
+    "tags": ["form", "input", "submit", "method", "action", "labels"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "input-element",
+    "title": "Input Element",
+    "category": "Forms",
+    "content": "The <input> element is used to create interactive controls for web-based forms. It has various types including text, password, email, tel, url, number, date, checkbox, radio, file, submit, button, reset, image, and more. Always use the appropriate type for the data being collected. Use the required attribute for mandatory fields. Include proper labels using <label> with for attribute matching the input's id.",
+    "tags": ["input", "form", "text", "email", "password", "checkbox", "radio", "accessibility"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "label-element",
+    "title": "Label Element",
+    "category": "Forms",
+    "content": "The <label> element represents a caption for an item in a user interface. It is associated with a form control using the for attribute, which should match the id of the form control. Clicking on a label will focus the associated form control. Labels are essential for accessibility as screen readers use them to describe form controls. Every form control should have a label.",
+    "tags": ["label", "form", "accessibility", "caption", "for"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "fieldset-legend",
+    "title": "Fieldset and Legend",
+    "category": "Forms",
+    "content": "The <fieldset> element is used to group related form controls and labels. It should contain a <legend> element as its first child, which provides a caption for the fieldset. Fieldsets are useful for grouping related radio buttons or checkboxes. They improve accessibility by grouping related form controls together, making it easier for screen reader users to navigate.",
+    "tags": ["fieldset", "legend", "form", "grouping", "accessibility", "radio", "checkbox"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "button-element",
+    "title": "Button Element",
+    "category": "Forms",
+    "content": "The <button> element represents a clickable button. It can have a type attribute of submit (default, submits the form), reset (resets form controls), or button (no default behavior). Buttons should have descriptive text content. For accessibility, buttons should have meaningful text, not just icons. Use the <button> element instead of <div> or <span> for clickable actions.",
+    "tags": ["button", "form", "submit", "reset", "click", "accessibility"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "table-element",
+    "title": "Table Element",
+    "category": "Tables",
+    "content": "The <table> element represents data with more than one dimension. It should only be used for tabular data, not for layout purposes. A table should include a <caption> element describing the table's content. The table structure includes <thead> (header content), <tbody> (body content), and <tfoot> (footer content). Each row is defined with <tr>, headers with <th>, and data cells with <td>.",
+    "tags": ["table", "caption", "thead", "tbody", "tfoot", "tr", "th", "td", "data"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "table-accessibility",
+    "title": "Table Accessibility",
+    "category": "Tables",
+    "content": "For accessibility, tables should include: 1) A <caption> element describing the table, 2) <th> elements with scope attributes (scope=\"col\" or scope=\"row\") for headers, 3) <thead>, <tbody>, and <tfoot> elements for structure, 4) For complex tables, use scope=\"colgroup\" or scope=\"rowgroup\" for header cells that span multiple columns or rows. Screen readers use these attributes to properly announce table structure to users.",
+    "tags": ["table", "accessibility", "caption", "scope", "th", "thead", "screen reader"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "list-elements",
+    "title": "List Elements",
+    "category": "Grouping Content",
+    "content": "HTML provides three types of list elements: <ul> (unordered list) for lists where order doesn't matter, <ol> (ordered list) for lists where order matters, and <dl> (description list) for name-value pairs. List items are defined with <li> for ul and ol, and <dt> (term) and <dd> (description) for dl. Lists should be used for grouping related items together semantically.",
+    "tags": ["ul", "ol", "li", "dl", "dt", "dd", "list", "grouping"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "figure-figcaption",
+    "title": "Figure and Figcaption",
+    "category": "Grouping Content",
+    "content": "The <figure> element represents self-contained content, such as illustrations, diagrams, photos, code listings, etc. It is often used with a <figcaption> element which provides a caption for the figure. The figcaption should be placed as the first or last child of the figure element. Figures are useful for images, code snippets, diagrams, and other content that could be moved without affecting the document flow.",
+    "tags": ["figure", "figcaption", "image", "caption", "diagram", "code"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "img-element",
+    "title": "Image Element",
+    "category": "Embedded Content",
+    "content": "The <img> element embeds an image into the document. It requires a src attribute (image source URL) and an alt attribute (alternative text). The alt attribute is essential for accessibility as it describes the image for screen reader users. If the image is decorative and doesn't convey meaning, use an empty alt attribute (alt=\"\"). Always include width and height attributes to prevent layout shifts as the page loads.",
+    "tags": ["img", "image", "src", "alt", "accessibility", "width", "height"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "aria-attributes",
+    "title": "ARIA Attributes",
+    "category": "Accessibility",
+    "content": "ARIA (Accessible Rich Internet Applications) attributes provide additional information for assistive technologies. Common ARIA attributes include: aria-label (accessible name), aria-labelledby (references another element for the name), aria-describedby (references another element for description), aria-hidden (hides from assistive tech), aria-expanded (for collapsible content), aria-controls (references controlled elements), and aria-live (for dynamic content updates). Use ARIA to enhance accessibility when semantic HTML is insufficient.",
+    "tags": ["aria", "accessibility", "screen reader", "attributes", "semantic"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "landmark-roles",
+    "title": "ARIA Landmark Roles",
+    "category": "Accessibility",
+    "content": "ARIA landmark roles help screen reader users navigate pages by identifying major sections. Use role=\"banner\" for the site header, role=\"navigation\" for navigation sections, role=\"main\" for the main content, role=\"complementary\" for sidebars, role=\"contentinfo\" for the footer, role=\"search\" for search sections, and role=\"form\" for forms. However, prefer semantic HTML elements (header, nav, main, aside, footer) over ARIA roles when possible.",
+    "tags": ["aria", "landmark", "role", "navigation", "accessibility", "screen reader"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "semantic-vs-div",
+    "title": "Semantic Elements vs Div",
+    "category": "Best Practices",
+    "content": "Use semantic elements (header, nav, main, section, article, aside, footer, etc.) to describe the meaning of content. Use <div> only when no semantic element is appropriate. Semantic elements provide meaning to both browsers and assistive technologies, improving accessibility and SEO. They also make the code more readable and maintainable. Avoid using div for everything; choose the most appropriate semantic element.",
+    "tags": ["semantic", "div", "best practices", "accessibility", "SEO", "meaning"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "accessibility-basics",
+    "title": "Web Accessibility Basics",
+    "category": "Accessibility",
+    "content": "Web accessibility means creating websites that everyone can use, including people with disabilities. Key principles: 1) Perceivable - content must be perceivable by all users, 2) Operable - interface must be operable by all users, 3) Understandable - information must be understandable, 4) Robust - content must work across different assistive technologies. Use semantic HTML, proper labels, alt text, heading hierarchy, and sufficient color contrast.",
+    "tags": ["accessibility", "a11y", "semantic", "labels", "alt text", "contrast"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "meta-charset",
+    "title": "Character Encoding",
+    "category": "Document Structure",
+    "content": "Always include <meta charset=\"UTF-8\"> in the head of your HTML document. UTF-8 is the most widely used character encoding and supports all Unicode characters. This meta tag should be placed within the first 1024 bytes of the HTML document to avoid character encoding issues. Without proper charset declaration, browsers may misinterpret special characters.",
+    "tags": ["meta", "charset", "UTF-8", "encoding", "head"],
+    "source": "MDN Web Docs"
+  },
+  {
+    "id": "viewport-meta",
+    "title": "Viewport Meta Tag",
+    "category": "Document Structure",
+    "content": "The viewport meta tag controls the layout on mobile browsers. Use <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> to ensure proper responsive behavior. This tells mobile browsers to use the device width as the viewport width and to display the page at 100% scale initially. Without this tag, mobile browsers may render the page at desktop width and scale it down.",
+    "tags": ["meta", "viewport", "responsive", "mobile", "width", "scale"],
+    "source": "MDN Web Docs"
+  }
+]
