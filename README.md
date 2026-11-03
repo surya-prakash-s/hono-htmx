@@ -1,98 +1,176 @@
-# Hono + HTMX + Semantic CSS Application
+# Semantic HTML Generator
 
-A modern web application built with:
-- **Hono**: Fast, lightweight web framework for JavaScript/TypeScript
-- **HTMX**: Dynamic HTML without writing JavaScript
-- **Semantic CSS**: Meaningful class names based on content purpose (no Tailwind!)
-
-## Features
-
-- Server-side rendering with Hono
-- Dynamic client-side updates with HTMX
-- Clean, semantic HTML and CSS
-- No React, no build step required
-- Progressive enhancement
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-```bash
-npm install
-```
-
-### Running the Application
-
-Development mode (with auto-reload):
-```bash
-npm run dev
-```
-
-Production mode:
-```bash
-npm start
-```
-
-The application will be available at `http://localhost:3000`
+A Hono + HTMX + Semantic CSS application powered by a Deterministic RAG LLM pipeline for generating semantic, accessible HTML.
 
 ## Project Structure
 
 ```
-.
+my-semantic-app/
 ├── src/
-│   └── index.js          # Main Hono server
-├── public/
-│   └── styles.css        # Semantic CSS styles
+│   ├── index.ts              # Hono app entry point & server setup
+│   ├── routes/               # URL routing (The Footwork)
+│   │   ├── index.tsx         # Home page route
+│   │   └── api/
+│   │       └── generate.ts   # The LLM generation endpoint
+│   ├── views/                # hono/jsx layouts & static components
+│   │   ├── layout.tsx        # Base HTML skeleton (Head, HTMX, CSS)
+│   │   └── components/       # Static, hand-written semantic components
+│   │       ├── Card.tsx
+│   │       └── CodeBlock.tsx
+│   ├── llm/                  # The AI Pipeline (The Cornerman)
+│   │   ├── pipeline.ts       # Orchestrates the LLM call
+│   │   ├── rag-retriever.ts  # The deterministic lookup engine
+│   │   └── prompts.ts        # System prompts and rules
+│   ├── db/                   # The Knowledge Base
+│   │   └── semantic-html-rag.json # The MDN specs we generated
+│   ├── lib/                  # Utilities & Validation (The Referee)
+│   │   └── html-linter.ts    # Cheerio-based semantic validator
+│   └── styles/               # Strict Semantic CSS (The Branding)
+│       ├── tokens.css        # CSS variables (colors, spacing, typography)
+│       ├── base.css          # Element resets and base typography
+│       └── components.css    # Semantic element styling (article, nav, etc.)
+├── public/                   # Static assets served directly
+│   ├── htmx.min.js           # The HTMX library
+│   └── icons/                # SVG icons (no JS icon libraries)
 ├── package.json
-├── README.md
-└── .gitignore
+├── tsconfig.json
+└── vite.config.ts            # Vite configuration for Hono
 ```
 
-## HTMX Usage
+## Tech Stack
 
-The application uses HTMX for dynamic behavior:
+- **Framework**: [Hono](https://hono.dev/) - Ultra-fast web framework
+- **Frontend**: HTMX for interactivity without JavaScript
+- **Styling**: Pure Semantic CSS with CSS Custom Properties
+- **Build Tool**: [Vite](https://vitejs.dev/) - Fast, modern build tool
+- **TypeScript**: Full type safety
+- **HTML Validation**: [Cheerio](https://cheerio.js.org/) - Fast, flexible, and lean implementation of core jQuery
 
-- `hx-get`: Fetch content via GET request
-- `hx-post`: Submit forms via POST request
-- `hx-target`: Specify where to place the response
-- `hx-swap`: Control how content is swapped in
+## Features
 
-Example:
-```html
-<button hx-get="/api/greet" hx-target="#greeting">Get Greeting</button>
-<div id="greeting"></div>
+### Deterministic RAG Pipeline
+- Retrieves relevant MDN specifications based on user prompts
+- Generates semantic HTML based on retrieved specs
+- Validates generated HTML for accessibility and semantic correctness
+- Returns confidence scores and validation results
+
+### Semantic CSS
+- CSS Custom Properties for theming
+- Responsive design with semantic breakpoints
+- Accessible color schemes
+- Print-friendly styles
+
+### HTMX Integration
+- Seamless interactivity without writing JavaScript
+- Form submissions with HTMX
+- Dynamic content updates
+- Loading indicators
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- pnpm or npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd my-semantic-app
+
+# Install dependencies
+npm install
+
+# Replace the placeholder HTMX with the real library
+# Download from https://unpkg.com/htmx.org@1.9.10
+# Or use a CDN in production
 ```
 
-## Semantic CSS Philosophy
+### Development
 
-Instead of utility classes like `bg-blue-500`, we use semantic class names:
+```bash
+npm run dev
+```
 
-- `.header` - for the header section
-- `.hero` - for the hero section
-- `.form-group` - for form input groups
-- `.notification` - for notification messages
-- `.success`, `.warning`, `.error` - for notification types
+The development server will start at `http://localhost:3000`
 
-This makes the CSS:
-- More readable
-- More maintainable
-- More portable
-- Easier to understand
+### Production Build
 
-## API Endpoints
+```bash
+npm run build
+npm run preview
+```
 
-- `GET /` - Home page
-- `GET /about` - About page (HTMX target)
-- `GET /contact` - Contact page (HTMX target)
-- `GET /api/greet` - Returns a greeting message
-- `POST /api/submit` - Handles form submission
-- `GET /health` - Health check endpoint
+## Usage
+
+1. Visit the home page at `/`
+2. Enter a prompt describing the HTML you want to generate
+3. Optionally add context or requirements
+4. Click "Generate"
+5. View the generated semantic HTML with validation results
+
+## Project Philosophy
+
+### The Footwork (Routes)
+- Clean, RESTful routing
+- Separation of concerns
+- HTMX-powered interactivity
+
+### The Cornerman (LLM Pipeline)
+- Deterministic RAG retrieval
+- Context-aware generation
+- Self-validation
+
+### The Referee (Validation)
+- Cheerio-based HTML parsing
+- Semantic validation
+- Accessibility checks
+
+### The Branding (Semantic CSS)
+- No Tailwind or utility classes
+- Semantic element styling
+- CSS Custom Properties for theming
+- Responsive and accessible
+
+## Architecture Decisions
+
+### Why Hono?
+- Ultra-fast performance
+- Simple, expressive API
+- First-class TypeScript support
+- JSX support for views
+- No heavy framework overhead
+
+### Why HTMX?
+- Progressive enhancement
+- No JavaScript required for interactivity
+- Small footprint (~14KB)
+- Works with any backend
+- Simple, declarative syntax
+
+### Why Semantic CSS?
+- Better maintainability
+- Improved accessibility
+- More meaningful code
+- Better SEO
+- Future-proof
+
+### Why Vite?
+- Blazing fast development server
+- Instant hot module replacement
+- Optimized production builds
+- Simple configuration
+- Modern ES modules
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
 
 ## License
 
-MIT
+MIT License
